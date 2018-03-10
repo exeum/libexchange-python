@@ -27,7 +27,7 @@ class Info(object):
 class Provider(Info):
 
     DUMMY = "dummy"
-    #TEST = "test"
+    TEST = "test"
     BINANCE = "binance"
     BITFINEX = "bitfinex"
     GEMINI = "gemini"

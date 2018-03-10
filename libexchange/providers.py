@@ -19,7 +19,7 @@ from libexchange.common.providers import set_exchange_driver
 
 DRIVERS = {
         Provider.DUMMY: ("libexchange.drivers.dummy", "DummyDriver"),
-        Provider.TEST: ("libexchange.drivers.dummy", "TestDriver"),
+        #Provider.TEST: ("libexchange.drivers.dummy", "TestDriver"),
         Provider.BINANCE: ("libexchange.drivers.binance", "BinanceDriver"),
         Provider.BITFINEX: ("libexchange.drivers.bitfinex", "Bitfinexriver"),
         Provider.GEMINI: ("libexchange.drivers.gemini", "GeminiDriver"),
