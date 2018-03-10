@@ -14,19 +14,25 @@
 # limitations under the License.
 
 import sys
-from abc import *
+from libexchange.drivers.base import BaseDriver
+from libexchange.drivers.base import print_package_install_info
+try:
+    from binance.client import Client
+except ImportError as e:
+    print_package_install_info("binance client", "python-binance")
+    sys.exit(1)
 
-ABC = ABCMeta("ABC", (object,), {})
+class BinanceDriver(BaseDriver, Client):
 
+    def __init__(self, api_key, api_secret):
+        Client.__init__(self, api_key, api_secret)
 
-class BaseDriver(ABC):
-
-    __metaclass__ = ABCMeta
-
-    @abstractmethod
     def get_exchange_name(self):
-        pass
+        return "BINANCE"
 
+    def get_symbols(self):
+        ret = self.get_exchange_info()
 
-def print_package_install_info(client_name, pkg_name):
-    print("%s is not installed. please install %s with 'pip%s install %s`" % (client_name, client_name, sys.version_info[0] if sys.version_info[0] > 2 else "", pkg_name))
+        symbols = [x["symbol"] for x in ret["symbols"]]
+
+        return symbols

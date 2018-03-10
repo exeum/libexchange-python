@@ -21,7 +21,7 @@ DRIVERS = {
         Provider.DUMMY: ("libexchange.drivers.dummy", "DummyDriver"),
         #Provider.TEST: ("libexchange.drivers.dummy", "TestDriver"),
         Provider.BINANCE: ("libexchange.drivers.binance", "BinanceDriver"),
-        Provider.BITFINEX: ("libexchange.drivers.bitfinex", "Bitfinexriver"),
+        Provider.BITFINEX: ("libexchange.drivers.bitfinex", "BitfinexDriver"),
         Provider.GEMINI: ("libexchange.drivers.gemini", "GeminiDriver"),
         Provider.OKEX: ("libexchange.drivers.okex", "OkexDriver"),
 }
